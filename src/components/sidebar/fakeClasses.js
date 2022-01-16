@@ -1,7 +1,7 @@
 export const fakeClasses = [
     {
         id: 0,
-        courseSection: "CS3505-001",
+        courseSection: "CS 3505-001",
         description: "Software Practice II"
     },
     {

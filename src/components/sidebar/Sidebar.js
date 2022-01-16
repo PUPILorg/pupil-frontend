@@ -5,6 +5,7 @@ import "./Sidebar.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import SidebarCourse from "../sidebarCourse/SidebarCourse";
 import {kebabCase} from "../../functions/kebabCase";
+import AccountCard from "../accountCard/AccountCard";
 
 export default function Sidebar() {
 
@@ -19,7 +20,7 @@ export default function Sidebar() {
                     return <SidebarCourse key={id} courseSectionRoute={kebabCase(courseSection)} courseSectionName={courseSection} description={description}/>
                 })}
             </div>
-
+            <AccountCard />
         </nav>
     )
 }

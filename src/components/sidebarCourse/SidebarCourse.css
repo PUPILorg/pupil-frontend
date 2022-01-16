@@ -11,10 +11,13 @@
     color: #1D242B;
 }
 
+.sidebar-course-description{
+    margin: 0;
+    color: #5E6C6C;
+}
+
 .sidebar-course-active{
     color: #0077C0;
 }
 
-.sidebar-course-description{
-    margin: 0;
-}
+

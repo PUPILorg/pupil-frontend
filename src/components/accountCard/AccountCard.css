@@ -1,0 +1,26 @@
+.account-card-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #0077C0;
+    width: 240px;
+    height: 54px;
+    padding: 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.user-icon{
+    color: #FFFFFF;
+}
+
+.account-card-text{
+    font-size: 20px;
+    font-family: "Roboto", Roboto, sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-left: 16px;
+}
