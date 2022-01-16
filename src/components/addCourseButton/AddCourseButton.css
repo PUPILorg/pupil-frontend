@@ -1,0 +1,25 @@
+.add-course-plus-icon{
+    color: #5E6C6C;
+}
+
+.add-course-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-course-button-content{
+    cursor: pointer;
+    text-align: center;
+}
+
+.add-course-button-text{
+    color: #5E6C6C;
+    margin: 4px 0 0;
+}
+
+.add-course-button-content:hover *{
+    color: #0077C0;
+}
+
+

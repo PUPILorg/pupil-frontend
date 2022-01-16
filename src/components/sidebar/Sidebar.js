@@ -6,6 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import SidebarCourse from "../sidebarCourse/SidebarCourse";
 import {kebabCase} from "../../functions/kebabCase";
 import AccountCard from "../accountCard/AccountCard";
+import AddCourseButton from "../addCourseButton/AddCourseButton";
 
 export default function Sidebar() {
 
@@ -19,6 +20,7 @@ export default function Sidebar() {
                 {fakeClasses.map(({id, courseSection, description}) => {
                     return <SidebarCourse key={id} courseSectionRoute={kebabCase(courseSection)} courseSectionName={courseSection} description={description}/>
                 })}
+                <AddCourseButton />
             </div>
             <AccountCard />
         </nav>

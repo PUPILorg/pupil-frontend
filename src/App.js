@@ -3,11 +3,10 @@ import './App.css';
 import {ChooseView} from "./components/chooseView/ChooseView";
 import {useSelector} from "react-redux";
 import Sidebar from "./components/sidebar/Sidebar";
-import UnknownPage from "./views/unknownPage/UnknownPage";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faUserCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faBars, faUserCircle)
+library.add(faBars, faUserCircle, faPlusCircle)
 
 function App() {
     const view = useSelector((state) => state.view.value);
