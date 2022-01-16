@@ -1,0 +1,36 @@
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100%;
+    border-right: 1px solid #C7EEFF;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar-content{
+    padding: 16px;
+}
+
+.sidebar-top-menu{
+    padding-bottom: 14px;
+    border-bottom: 1px solid #C7EEFF;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-link{
+    color: #0077C0;
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.sidebar-bars{
+    color: #0077C0;
+    cursor: pointer;
+}

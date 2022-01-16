@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-export const PROFESSOR_VIEW = "professor";
-export const STUDENT_VIEW = "student";
+export const PROFESSOR_VIEW = 0;
+export const STUDENT_VIEW = 1;
 
 export const chooseView = createSlice({
     name: 'view',

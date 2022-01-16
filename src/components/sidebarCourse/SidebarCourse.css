@@ -1,0 +1,20 @@
+.sidebar-course{
+    border-bottom: 1px solid #C7EEFF;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+}
+
+.sidebar-course-link{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Roboto", Roboto, sans-serif;
+    color: #1D242B;
+}
+
+.sidebar-course-active{
+    color: #0077C0;
+}
+
+.sidebar-course-description{
+    margin: 0;
+}
