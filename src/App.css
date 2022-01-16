@@ -1,1 +1,14 @@
+h1{
+    font-size: 24px;
+    font-family: "Roboto", Roboto, sans-serif;
+    color: #1D242B;
+    font-weight: 400;
+    margin: 0 0 20px;
+}
 
+h2{
+    font-size: 20px;
+    font-family: "Roboto", Roboto, sans-serif;
+    color: #1D242B;
+    font-weight: 400;
+}

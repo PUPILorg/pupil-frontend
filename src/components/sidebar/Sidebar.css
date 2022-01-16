@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 240px;
-    height: 100%;
+    height: calc(100% - 54px);
     border-right: 1px solid #C7EEFF;
     overflow-x: hidden;
     overflow-y: auto;

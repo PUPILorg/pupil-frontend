@@ -1,0 +1,16 @@
+.dashboard-course-list{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.dashboard{
+    padding: 20px;
+}
+
+.dashboard-semester-name{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #C7EEFF;
+    margin: 0 0 20px;
+    color: #5E6C6C;
+}

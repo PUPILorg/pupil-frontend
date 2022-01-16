@@ -1,8 +1,8 @@
 import React from "react";
 import {Link, useMatch, useResolvedPath} from "react-router-dom";
-import "./SidebarCourse.css";
+import "./CourseLink.css";
 
-export default function SidebarCourse({courseSectionRoute, courseSectionName, description}) {
+export default function CourseLink({courseSectionRoute, courseSectionName, description}) {
 
     let resolved = useResolvedPath(courseSectionRoute);
     let match = useMatch({path: resolved.pathname, end: true});

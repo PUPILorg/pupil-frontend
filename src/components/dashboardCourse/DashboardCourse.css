@@ -1,0 +1,20 @@
+.dashboard-course{
+    width: 30%;
+    min-width: 240px;
+    margin: 0 30px 30px 0;
+}
+
+.dashboard-course-info-container{
+    background-color: #0077C0;
+    padding: 10px;
+}
+
+.dashboard-course-info{
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.dashboard-course-link-container{
+    padding: 10px;
+    background-color: #C7EEFF;
+}
