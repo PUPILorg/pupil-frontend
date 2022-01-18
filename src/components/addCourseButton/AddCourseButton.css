@@ -16,6 +16,7 @@
 .add-course-button-text{
     color: #5E6C6C;
     margin: 4px 0 0;
+    font-size: 14px;
 }
 
 .add-course-button-content:hover *{

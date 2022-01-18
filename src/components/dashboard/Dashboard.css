@@ -1,9 +1,3 @@
-.dashboard-course-list{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-}
-
 .dashboard{
     padding: 20px;
 }

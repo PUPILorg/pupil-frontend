@@ -8,11 +8,12 @@ export default function CourseLink({courseSectionRoute, courseSectionName, descr
     let match = useMatch({path: resolved.pathname, end: true});
 
     return (
-        <div className="sidebar-course">
-            <Link
-                className={`sidebar-course-link${(match ? " sidebar-course-active" : "")}`}
-                to={`/${courseSectionRoute}`}>{courseSectionName}</Link>
-            <p className={`sidebar-course-description${(match ? " sidebar-course-active" : "")}`}>{description}</p>
+        <div className="sidebar-course-content">
+            <Link className={`sidebar-course-link${(match ? " sidebar-course-active" : "")}`}
+                  to={`/${courseSectionRoute}`}>
+                <p className="sidebar-course-name">{courseSectionName}</p>
+                <p className={`sidebar-course-description${(match ? " sidebar-course-active" : "")}`}>{description}</p>
+            </Link>
         </div>
     )
 }

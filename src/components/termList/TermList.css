@@ -1,0 +1,15 @@
+.term-list-container{
+    max-width: 1200px;
+}
+
+.term-list-courses{
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.term-name{
+    padding-bottom: 8px;
+    border-bottom: 1px solid #C7EEFF;
+    margin-bottom: 20px;
+}
