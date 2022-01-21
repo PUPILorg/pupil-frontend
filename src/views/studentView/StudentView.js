@@ -10,15 +10,17 @@ import {fetchTermsList} from "../../redux/thunks/fetchTermsList";
 export default function StudentView() {
 
     const authToken = useSelector(state => state.authToken.token);
-    const {termsList, loading} = useSelector(state => state.termsList);
+    const {termsList, loading, statusCode} = useSelector(state => state.termsList);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchTermsList(authToken));
     }, [dispatch, authToken])
 
+    const dataReady = !loading && statusCode < 400;
+
     return (<div>
-            {!loading && <div>
+            {dataReady && <div>
                 <Sidebar terms={termsList}/>
                 <div className={"student-view-content"}>
                     <Routes>

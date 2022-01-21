@@ -13,13 +13,13 @@ library.add(faBars, faUserCircle, faPlusCircle);
 
 function App() {
 
-    const user = useSelector((state) => state.user);
     const view = useSelector((state) => state.view.value);
+    const authorized = useSelector((state) => state.authorized);
 
     return (
         <div className="App">
-            {!user.loggedIn ? <Login/> : (view === PROFESSOR_VIEW) ? <ProfessorView /> : <StudentView />}
-            {user.loggedIn && <ChooseView/>}
+            {!authorized ? <Login/> : (view === PROFESSOR_VIEW) ? <ProfessorView /> : <StudentView />}
+            {!authorized && <ChooseView/>}
         </div>
     );
 }

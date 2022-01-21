@@ -3,10 +3,11 @@ import {createSlice} from "@reduxjs/toolkit";
 export const PROFESSOR = 'professor';
 export const STUDENT = 'student';
 
+// TODO: add token to user state
+
 const userSlice = createSlice({
     name: 'user',
     initialState: {
-        loggedIn: false,
         id: null,
         role: null,
     },
