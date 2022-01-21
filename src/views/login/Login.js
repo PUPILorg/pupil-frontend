@@ -19,7 +19,7 @@ export default function Login(){
     return(
         <div className="login-screen">
             <p className="login-text">This is a temporary login screen. By clicking login, the test auth token should be
-            saved locally to your computer. This token currently has no expiration, so you shouldn't need to log in again.</p>
+            saved locally to your computer. To disable this login screen, uncomment line 21 in src/redux/store.js</p>
             <button onClick={onClick} className="login-button">Log in</button>
         </div>
     )

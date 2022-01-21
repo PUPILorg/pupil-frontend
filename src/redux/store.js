@@ -5,6 +5,7 @@ import {logger} from "./middleware/loggerMiddleware";
 import authTokenReducer from "./slices/authTokenSlice";
 import {persistToken} from "./middleware/persistTokenMiddleware";
 import userReducer from "./slices/userSlice";
+import {termsListReducer} from "./thunks/fetchTermsList";
 
 const authToken = loadToken();
 
@@ -13,6 +14,7 @@ export default configureStore({
         view: chooseViewReducer,
         authToken: authTokenReducer,
         user: userReducer,
+        termsList: termsListReducer,
     },
     preloadedState: {
         authToken: authToken,

@@ -4,34 +4,29 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Dashboard from "../../components/dashboard/Dashboard";
 import {Route, Routes} from "react-router-dom";
 import {useEffect} from "react";
-import axios from "axios";
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
+import {fetchTermsList} from "../../redux/thunks/fetchTermsList";
 
 export default function StudentView() {
 
     const authToken = useSelector(state => state.authToken.token);
+    const {termsList, loading} = useSelector(state => state.termsList);
+    const dispatch = useDispatch();
 
-    useEffect(() =>{
-        axios.get('https://backend.pupil.systems/API/student/courses/', {
-            headers: {
-                'Authorization': `token ${authToken}`
-            }
-        })
-            .then((res) => {
-                console.log(res.data)
-            })
-            .catch((error) => {
-                console.error(error);
-            })
-    }, [])
+    useEffect(() => {
+        dispatch(fetchTermsList(authToken));
+    }, [dispatch, authToken])
 
     return (<div>
-            <Sidebar/>
-            <div className={"student-view-content"}>
-                <Routes>
-                    <Route path="/" element={<Dashboard />}/>
-                </Routes>
+            {!loading && <div>
+                <Sidebar terms={termsList}/>
+                <div className={"student-view-content"}>
+                    <Routes>
+                        <Route path="/" element={<Dashboard terms={termsList}/>}/>
+                    </Routes>
+                </div>
             </div>
+            }
         </div>
     )
 }

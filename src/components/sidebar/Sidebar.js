@@ -1,5 +1,4 @@
 import React from "react";
-import {fakeClasses} from "./fakeClasses";
 import {Link} from "react-router-dom";
 import "./Sidebar.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -8,7 +7,7 @@ import {kebabCase} from "../../functions/kebabCase";
 import AccountCard from "../accountCard/AccountCard";
 import AddCourseButton from "../addCourseButton/AddCourseButton";
 
-export default function Sidebar() {
+export default function Sidebar({terms}) {
     return (
         <nav className={"sidebar"}>
             <div className={"sidebar-content"}>
@@ -16,9 +15,9 @@ export default function Sidebar() {
                     <Link className={"dashboard-link"} to="/">pupil</Link>
                     <FontAwesomeIcon icon="bars" size="1x" className="sidebar-bars"/>
                 </div>
-                {fakeClasses[0] && fakeClasses[0].courses.map(({id, courseSection, description}) => {
-                    return <CourseLink key={id} courseSectionRoute={kebabCase(courseSection)}
-                                       courseSectionName={courseSection} description={description}/>
+                {terms[0].courses.map(({id, course_identifier, section_num}) => {
+                    return <CourseLink key={id} courseSectionRoute={kebabCase(course_identifier + "-" + section_num)}
+                                       courseSectionName={course_identifier} description={"TODO"}/>
                 })}
                 <AddCourseButton/>
             </div>

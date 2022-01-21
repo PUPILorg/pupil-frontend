@@ -1,15 +1,14 @@
 import React from "react";
-import {fakeClasses} from "../sidebar/fakeClasses";
 import TermList from "../termList/TermList";
 
 import "./Dashboard.css";
 
-export default function Dashboard() {
+export default function Dashboard({terms}) {
     return (
         <div className="dashboard">
             <h1>Courses</h1>
-            {fakeClasses.map(({id, name, courses}) => {
-                return <TermList key={id} termName={name} courses={courses}/>
+            {terms.map(({id, semester, courses}) => {
+                return <TermList key={id} termName={semester} courses={courses}/>
             })}
         </div>
     )

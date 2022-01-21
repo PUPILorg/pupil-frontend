@@ -1,7 +1,6 @@
 import './App.css';
 import {ChooseView} from "./components/chooseView/ChooseView";
 import {useSelector} from "react-redux";
-import Sidebar from "./components/sidebar/Sidebar";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars, faUserCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import {PROFESSOR_VIEW} from "./redux/slices/chooseViewSlice";
@@ -20,7 +19,7 @@ function App() {
     return (
         <div className="App">
             {!user.loggedIn ? <Login/> : (view === PROFESSOR_VIEW) ? <ProfessorView /> : <StudentView />}
-            <ChooseView/>
+            {user.loggedIn && <ChooseView/>}
         </div>
     );
 }
