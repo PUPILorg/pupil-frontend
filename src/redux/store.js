@@ -18,7 +18,7 @@ export default configureStore({
     },
     preloadedState: {
         authToken: authToken,
-        user: {loggedIn: true, id: null, role: 'student'}
+        // user: {loggedIn: true, id: null, role: 'student'}
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger, persistToken),
 })
