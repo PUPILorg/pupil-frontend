@@ -7,13 +7,13 @@ export default function TermList({courses, termName}) {
     return <div className="term-list-container">
         <h2 className="term-name">{termName}</h2>
         <div className="term-list-courses">
-            {courses.map(({id, courseSection, description, numLectures}) => {
+            {courses.map(({id, section_num:courseSection, course_identifier:name, description, numLectures}) => {
                 return <DashboardCourse
                     key={id}
-                    courseSectionRoute={kebabCase(courseSection)}
-                    courseSectionName={courseSection}
-                    description={description}
-                    numLectures={numLectures}
+                    courseSectionRoute={kebabCase(name + '-' + courseSection)}
+                    courseName={name}
+                    description={"TODO: description"}
+                    numLectures={"TODO: numLectures"}
                 />
             })}
         </div>
