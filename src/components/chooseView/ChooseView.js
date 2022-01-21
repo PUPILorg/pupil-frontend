@@ -1,6 +1,6 @@
 import React from "react";
 import {useSelector, useDispatch} from "react-redux";
-import {viewAsStudent, viewAsProfessor, PROFESSOR_VIEW, STUDENT_VIEW} from "./chooseViewSlice";
+import {viewAsStudent, viewAsProfessor, PROFESSOR_VIEW, STUDENT_VIEW} from "../../redux/slices/chooseViewSlice";
 import "./ChooseView.css";
 
 export function ChooseView() {

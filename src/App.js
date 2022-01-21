@@ -4,19 +4,23 @@ import {useSelector} from "react-redux";
 import Sidebar from "./components/sidebar/Sidebar";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars, faUserCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import {PROFESSOR_VIEW} from "./components/chooseView/chooseViewSlice";
+import {PROFESSOR_VIEW} from "./redux/slices/chooseViewSlice";
 import ProfessorView from "./views/professorView/ProfessorView";
 import StudentView from "./views/studentView/StudentView";
+import Login from "./views/login/Login";
+
 
 library.add(faBars, faUserCircle, faPlusCircle);
 
 function App() {
+
+    const user = useSelector((state) => state.user);
     const view = useSelector((state) => state.view.value);
 
     return (
         <div className="App">
+            {!user.loggedIn ? <Login/> : (view === PROFESSOR_VIEW) ? <ProfessorView /> : <StudentView />}
             <ChooseView/>
-            {(view === PROFESSOR_VIEW) ? <ProfessorView /> : <StudentView />}
         </div>
     );
 }

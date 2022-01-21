@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 export const PROFESSOR_VIEW = 0;
 export const STUDENT_VIEW = 1;
 
-export const chooseView = createSlice({
+const chooseViewSlice = createSlice({
     name: 'view',
     initialState: {
         value: PROFESSOR_VIEW,
@@ -23,6 +23,7 @@ export const chooseView = createSlice({
     },
 })
 
-export const { viewAsStudent, viewAsProfessor } = chooseView.actions
+export const { viewAsStudent, viewAsProfessor } = chooseViewSlice.actions;
+//The above creates actions view/viewAsStudent and view/viewAsProfessor
 
-export default chooseView.reducer
+export default chooseViewSlice.reducer;

@@ -9,7 +9,6 @@ import AccountCard from "../accountCard/AccountCard";
 import AddCourseButton from "../addCourseButton/AddCourseButton";
 
 export default function Sidebar() {
-
     return (
         <nav className={"sidebar"}>
             <div className={"sidebar-content"}>
@@ -17,7 +16,7 @@ export default function Sidebar() {
                     <Link className={"dashboard-link"} to="/">pupil</Link>
                     <FontAwesomeIcon icon="bars" size="1x" className="sidebar-bars"/>
                 </div>
-                {fakeClasses[0].courses && fakeClasses[0].courses.map(({id, courseSection, description}) => {
+                {fakeClasses[0] && fakeClasses[0].courses.map(({id, courseSection, description}) => {
                     return <CourseLink key={id} courseSectionRoute={kebabCase(courseSection)}
                                        courseSectionName={courseSection} description={description}/>
                 })}
