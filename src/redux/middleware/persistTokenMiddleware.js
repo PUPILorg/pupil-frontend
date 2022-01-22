@@ -1,12 +1,15 @@
-import {saveToken} from "../../auth/localStorage";
+import {saveToken} from "../../auth/localStorageAuthToken";
 
 export const persistToken = store => next => action => {
 
     switch (action.type) {
-
-        case 'authToken/receiveToken':
-            console.log("Saving token to local storage");
-            saveToken(action.payload);
+        case 'user/validateToken/fulfilled':
+            console.log("Saving auth token to local storage");
+            saveToken(action.payload.data.token);
+            break;
+        case 'user/loginUser/fulfilled':
+            console.log("Saving auth token to local storage");
+            saveToken(action.payload.data.token);
             break;
         default:
             break;
