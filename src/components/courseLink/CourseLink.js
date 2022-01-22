@@ -10,7 +10,7 @@ export default function CourseLink({courseSectionRoute, courseSectionName, descr
     return (
         <div className="sidebar-course-content">
             <Link className={`sidebar-course-link${(match ? " sidebar-course-active" : "")}`}
-                  to={`/${courseSectionRoute}`}>
+                  to={courseSectionRoute}>
                 <p className="sidebar-course-name">{courseSectionName}</p>
                 <p className={`sidebar-course-description${(match ? " sidebar-course-active" : "")}`}>{description}</p>
             </Link>

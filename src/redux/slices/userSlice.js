@@ -10,7 +10,7 @@ const userSlice = createSlice({
         authToken: null,
         id: null,
         role: null,
-        loading: false,
+        loading: true,
         statusCode: null
     },
     reducers: {},
