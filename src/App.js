@@ -2,7 +2,7 @@ import './App.css';
 import {ChooseView} from "./components/chooseView/ChooseView";
 import {useDispatch, useSelector} from "react-redux";
 import {library} from '@fortawesome/fontawesome-svg-core';
-import {faBars, faUserCircle, faPlusCircle} from '@fortawesome/free-solid-svg-icons';
+import {faBars, faUserCircle, faPlusCircle, faVideo, faUserFriends, faCog, faCircle } from '@fortawesome/free-solid-svg-icons';
 import {PROFESSOR_VIEW} from "./redux/slices/chooseViewSlice";
 import ProfessorView from "./views/professorView/ProfessorView";
 import StudentView from "./views/studentView/StudentView";
@@ -12,7 +12,7 @@ import {validateToken} from "./redux/thunks/validateToken";
 import {loadToken} from "./auth/localStorageAuthToken";
 
 
-library.add(faBars, faUserCircle, faPlusCircle);
+library.add(faBars, faUserCircle, faPlusCircle, faVideo, faUserFriends, faCog, faCircle);
 
 function App() {
 
