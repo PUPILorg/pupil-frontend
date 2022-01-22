@@ -1,22 +1,23 @@
 import React from "react";
-import {
-  Link,
-  resolvePath,
-  Route,
-  Routes,
-  useLocation,
-  useParams,
-  useResolvedPath,
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./ProfessorClassSidebar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CourseLink from "../courseLink/CourseLink";
-import { kebabCase } from "../../functions/kebabCase";
-import AccountCard from "../accountCard/AccountCard";
+import AccountCard from "../../accountCard/AccountCard";
 
-export default function ProfessorClassSideBar() {
-  const route = useLocation().pathname;
-  const className = route.split("/")[1];
+
+
+export default function ProfessorClassSidebar() {
+
+  // TODO: use the below in a custom ProfessorClassSidebarLink component to change styling on active route
+  //
+  // Look at the CourseLink component for reference
+  //
+  // let resolved = useResolvedPath(courseSectionRoute);
+  // let match = useMatch({path: resolved.pathname, end: true});
+  //
+  //
+
+  const className = "TODO, get from API fetch"
   return (
     <nav className={"sidebar"}>
       <div className={"sidebar-content"}>
@@ -32,11 +33,11 @@ export default function ProfessorClassSideBar() {
 
         <div className="side-bar-menu">
           <div className="links">
-            <Link className="lectures-link link" to={`${className}/lectures`}>
+            <Link className="lectures-link link" to="lectures">
               <FontAwesomeIcon icon="video" size="1x" className="icons" />
               Lectures
             </Link>
-            <Link className="lectures-link link" to={`${className}/roster`}>
+            <Link className="lectures-link link" to="roster">
               <FontAwesomeIcon
                 icon="user-friends"
                 size="1x"
@@ -44,12 +45,12 @@ export default function ProfessorClassSideBar() {
               />
               Roster
             </Link>
-            <Link className="lectures-link link" to={`${className}/settings`}>
+            <Link className="lectures-link link" to="settings">
               <FontAwesomeIcon icon="cog" size="1x" className="icons" />
               Settings
             </Link>
 
-            <Link className="lectures-link link" to={`${className}/recorder`}>
+            <Link className="lectures-link link" to="recorder">
               <FontAwesomeIcon icon="circle" size="1x" className="icons" />
               Recorder
             </Link>

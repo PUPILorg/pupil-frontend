@@ -1,38 +1,45 @@
 import './App.css';
-import {ChooseView} from "./components/chooseView/ChooseView";
-import {useDispatch, useSelector} from "react-redux";
 import {library} from '@fortawesome/fontawesome-svg-core';
-import {faBars, faUserCircle, faPlusCircle, faVideo, faUserFriends, faCog, faCircle } from '@fortawesome/free-solid-svg-icons';
-import {PROFESSOR_VIEW} from "./redux/slices/chooseViewSlice";
-import ProfessorView from "./views/professorView/ProfessorView";
+import {
+    faBars,
+    faUserCircle,
+    faPlusCircle,
+    faVideo,
+    faUserFriends,
+    faCog,
+    faCircle
+} from '@fortawesome/free-solid-svg-icons';
 import StudentView from "./views/studentView/StudentView";
 import Login from "./views/login/Login";
-import {useEffect} from "react";
-import {validateToken} from "./redux/thunks/validateToken";
-import {loadToken} from "./auth/localStorageAuthToken";
+import {Routes, Route} from "react-router-dom";
+import Redirect from "./views/redirect/Redirect";
+import RequireAuth from "./auth/RequireAuth";
+import CourseList from "./components/courseList/CourseList";
+import StudentCourse from "./components/studentCourse/StudentCourse";
+import ProfessorView from "./views/professorView/ProfessorView";
+import ProfessorCourse from "./components/professorCourse/ProfessorCourse";
+import ProfessorDashboard from "./components/professorDashboard/ProfessorDashboard";
+import ProfessorLecturesList from "./components/professorLecturesList/ProfessorLecturesList";
 
 
 library.add(faBars, faUserCircle, faPlusCircle, faVideo, faUserFriends, faCog, faCircle);
 
 function App() {
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-            console.log("APP MOUNTED: GETTING AUTH TOKEN FROM LOCAL STORAGE");
-            const authToken = loadToken(); // Try to load in an auth token from local storage
-            dispatch(validateToken(authToken))
-        }, []
-    )
-
-    const view = useSelector((state) => state.view.value);
-    const authorized = useSelector((state) => state.authorized);
-
     return (
-        <div className="App">
-            {!authorized ? <Login/> : (view === PROFESSOR_VIEW) ? <ProfessorView/> : <StudentView/>}
-            {authorized && <ChooseView/>}
-        </div>
+        <Routes>
+            <Route path="/" element={<Redirect/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/student" element={<RequireAuth><StudentView/></RequireAuth>}>
+                <Route path="dashboard" element={<CourseList />} />
+                <Route path=":courseID" element={<StudentCourse />}/>
+            </Route>
+            <Route path="/professor" element={<RequireAuth><ProfessorView/></RequireAuth>}>
+                <Route path="dashboard" element={<ProfessorDashboard />} />
+                <Route path=":courseID" element={<ProfessorCourse/>}>
+                    <Route path="lectures" element={<ProfessorLecturesList />}/>
+                </Route>
+            </Route>
+        </Routes>
     );
 }
 
