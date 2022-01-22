@@ -1,35 +1,46 @@
 import {createSlice} from "@reduxjs/toolkit";
-
-export const PROFESSOR = 'professor';
-export const STUDENT = 'student';
+import {validateToken} from "../thunks/validateToken";
+import {loginUser} from "../thunks/loginUser";
 
 // TODO: add token to user state
 
 const userSlice = createSlice({
     name: 'user',
     initialState: {
+        authToken: null,
         id: null,
         role: null,
+        loading: false,
+        statusCode: null
     },
-    reducers: {
-        login: (state, action) => {
-            return {
-                loggedIn: true,
-                id: action.payload.id,
-                role: action.payload.role
-            }
+    reducers: {},
+    extraReducers: {
+        [validateToken.pending]: (state) => {
+            state.loading = true;
         },
-        logout: (state) => {
-            state.value = {
-                loggedIn: false,
-                id: null,
-                role: null,
-            }
-        }
-
+        [validateToken.fulfilled]: (state, {payload}) => {
+            state.loading = false;
+            state.authToken = payload.data.token;
+            state.statusCode = payload.status;
+        },
+        [validateToken.rejected]: (state, {payload}) => {
+            state.loading = false;
+            state.statusCode = payload.status;
+        },
+        [loginUser.pending]: (state) => {
+            state.loading = true;
+        },
+        [loginUser.fulfilled]: (state, {payload}) => {
+            state.loading = false;
+            state.authToken = payload.data.token;
+            state.statusCode = payload.status;
+        },
+        [loginUser.rejected]: (state, {payload}) => {
+            state.loading = false;
+            state.statusCode = payload.status;
+        },
     }
 })
 
-export const {login, logout} = userSlice.actions;
 
-export default userSlice.reducer;
+export const userReducer = userSlice.reducer;

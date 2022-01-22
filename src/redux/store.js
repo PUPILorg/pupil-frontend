@@ -1,25 +1,26 @@
 import {configureStore} from '@reduxjs/toolkit'
 import chooseViewReducer from "./slices/chooseViewSlice"
-import {loadToken} from "../auth/localStorage";
 import {logger} from "./middleware/loggerMiddleware";
-import authTokenReducer from "./slices/authTokenSlice";
 import {persistToken} from "./middleware/persistTokenMiddleware";
-import userReducer from "./slices/userSlice";
-import {termsListReducer} from "./thunks/fetchTermsList";
-import authorizedReducer from "./slices/authorizedReducer";
+import {userReducer} from "./slices/userSlice";
+import {termsListReducer} from "./slices/termsListSlice";
+import authorizedReducer from "./reducers/authorizedReducer";
 
-const authToken = loadToken();
+// const authToken = loadToken(); // Try to load in an auth token from local storage
 
 export default configureStore({
     reducer: {
         view: chooseViewReducer,
-        authToken: authTokenReducer,
         user: userReducer,
         termsList: termsListReducer,
         authorized: authorizedReducer,
     },
     preloadedState: {
-        authToken: authToken,
+        user:{
+            authToken: null,
+            id: null,
+            role: null,
+        },
         // user: {loggedIn: true, id: null, role: 'student'}
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger, persistToken),

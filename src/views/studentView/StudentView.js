@@ -9,7 +9,7 @@ import {fetchTermsList} from "../../redux/thunks/fetchTermsList";
 
 export default function StudentView() {
 
-    const authToken = useSelector(state => state.authToken.token);
+    const authToken = useSelector(state => state.user.authToken);
     const {termsList, loading, statusCode} = useSelector(state => state.termsList);
     const dispatch = useDispatch();
 

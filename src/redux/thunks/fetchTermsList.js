@@ -1,4 +1,4 @@
-import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
+import { createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchTermsList = createAsyncThunk(
@@ -22,29 +22,3 @@ export const fetchTermsList = createAsyncThunk(
         }
     }
 )
-
-const termsListSlice = createSlice({
-    name: 'termsList',
-    initialState: {
-        termsList: [],
-        loading: true,
-        statusCode: null
-    },
-    reducers: {},
-    extraReducers: {
-        [fetchTermsList.pending]: (state) => {
-            state.loading = true;
-        },
-        [fetchTermsList.fulfilled]: (state, {payload}) => {
-            state.loading = false
-            state.termsList = payload.data
-            state.statusCode = payload.status
-        },
-        [fetchTermsList.rejected]: (state, {payload}) => {
-            state.loading = false
-            state.statusCode = payload.status
-        },
-    },
-});
-
-export const termsListReducer = termsListSlice.reducer
