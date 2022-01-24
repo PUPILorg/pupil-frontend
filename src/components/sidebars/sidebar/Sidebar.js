@@ -6,8 +6,11 @@ import CourseLink from "../../courseLink/CourseLink";
 import {kebabCase} from "../../../functions/kebabCase";
 import AccountCard from "../../accountCard/AccountCard";
 import AddCourseButton from "../../addCourseButton/AddCourseButton";
+import {useSelector} from "react-redux";
 
-export default function Sidebar({terms, professor}) {
+
+export default function Sidebar({termsList}) {
+    const role = useSelector(state => state.user.role);
 
 
     return (
@@ -17,9 +20,9 @@ export default function Sidebar({terms, professor}) {
                     <Link className={"dashboard-link"} to="/">pupil</Link>
                     <FontAwesomeIcon icon="bars" size="1x" className="sidebar-bars"/>
                 </div>
-                {terms[0].courses.map(({id, course_identifier, section_num}) => {
+                {termsList[0].courses.map(({id, course_identifier, section_num}) => {
                     return <CourseLink key={id}
-                                       courseSectionRoute={professor
+                                       courseSectionRoute={role === "professor"
                                            ?
                                            `../${kebabCase(course_identifier + section_num)}`
                                            :
