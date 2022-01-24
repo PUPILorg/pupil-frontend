@@ -14,7 +14,7 @@ export const validateToken = createAsyncThunk(
 
             //TODO: change this
             const response = {
-                status: 200,
+                status: 400,
                 data: {
                     token: authToken // change authToken to be the new token after it is refreshed
                 }

@@ -13,7 +13,7 @@ export default configureStore({
         user:{
             authToken: null,
             id: null,
-            role: 'student',
+            role: 'professor',
             loading: true
         },
     },
