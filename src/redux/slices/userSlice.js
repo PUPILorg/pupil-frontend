@@ -2,8 +2,6 @@ import {createSlice} from "@reduxjs/toolkit";
 import {validateToken} from "../thunks/validateToken";
 import {loginUser} from "../thunks/loginUser";
 
-// TODO: add token to user state
-
 const userSlice = createSlice({
     name: 'user',
     initialState: {

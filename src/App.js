@@ -14,12 +14,12 @@ import Login from "./views/login/Login";
 import {Routes, Route} from "react-router-dom";
 import Redirect from "./views/redirect/Redirect";
 import RequireAuth from "./auth/RequireAuth";
-import CourseList from "./components/courseList/CourseList";
 import StudentCourse from "./components/studentCourse/StudentCourse";
 import ProfessorView from "./views/professorView/ProfessorView";
 import ProfessorCourse from "./components/professorCourse/ProfessorCourse";
 import ProfessorDashboard from "./components/professorDashboard/ProfessorDashboard";
 import ProfessorLecturesList from "./components/professorLecturesList/ProfessorLecturesList";
+import StudentCourseList from "./components/courseLists/StudentCourseList/StudentCourseList";
 
 
 library.add(faBars, faUserCircle, faPlusCircle, faVideo, faUserFriends, faCog, faCircle);
@@ -30,7 +30,7 @@ function App() {
             <Route path="/" element={<Redirect/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/student" element={<RequireAuth><StudentView/></RequireAuth>}>
-                <Route path="dashboard" element={<CourseList />} />
+                <Route path="dashboard" element={<StudentCourseList />} />
                 <Route path=":courseID" element={<StudentCourse />}/>
             </Route>
             <Route path="/professor" element={<RequireAuth><ProfessorView/></RequireAuth>}>

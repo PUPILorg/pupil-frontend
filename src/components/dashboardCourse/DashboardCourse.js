@@ -1,6 +1,7 @@
 import React from "react";
 import "./DashboardCourse.css";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 export default function DashboardCourse(
     {
@@ -8,11 +9,12 @@ export default function DashboardCourse(
         courseName,
         description,
         numLectures,
-        professor
     }) {
 
+    const role = useSelector(state => state.user.role)
+
     return (
-        <Link to={professor ? `../${courseSectionRoute}/lectures` : `../${courseSectionRoute}`} replace className="dashboard-course-link">
+        <Link to={role === 'professor' ? `../${courseSectionRoute}/lectures` : `../${courseSectionRoute}`} replace className="dashboard-course-link">
             <div>
                 <div className="dashboard-course-name-container">
                     <p className="dashboard-course-name">{courseName}</p>

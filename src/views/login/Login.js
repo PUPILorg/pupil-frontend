@@ -15,7 +15,7 @@ export default function Login() {
     const authorized = useSelector((state) => state.authorized);
 
     useEffect(() => {
-            console.log("APP MOUNTED: GETTING AUTH TOKEN FROM LOCAL STORAGE");
+            console.log("LOGIN MOUNTED: GETTING AUTH TOKEN FROM LOCAL STORAGE");
             const authToken = loadToken(); // Try to load in an auth token from local storage
             dispatch(validateToken(authToken))
         }, [dispatch]
