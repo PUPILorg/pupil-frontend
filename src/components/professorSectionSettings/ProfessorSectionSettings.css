@@ -1,0 +1,252 @@
+.settings-component {
+  color: #1d242b;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.basic-information-grid {
+  width: 500px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.course-name-label {
+  grid-column: 1 / 2;
+  grid-row: 1 /2;
+  color: #1d242b;
+}
+#course-name-input {
+  grid-column: 2 / 3;
+  width: 150px;
+}
+
+.course-description-label {
+  grid-column: 1 / 2;
+}
+.course-description-input {
+  grid-column: 2 / 3;
+  width: 150px;
+}
+
+.section-number-label {
+  grid-column: 1 / 2;
+}
+#section-number-input {
+  grid-column: 2 / 3;
+  width: 150px;
+}
+
+.room-location-label {
+  grid-column: 1 / 2;
+}
+#room-location-input {
+  grid-column: 2 / 3;
+  width: 150px;
+}
+#start-date {
+  width: 150px;
+}
+#end-date {
+  width: 150px;
+}
+
+/*grid for the week display area*/
+.week-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: auto auto auto auto auto auto;
+  row-gap: 10px;
+}
+.day-title {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  margin-bottom: 0px;
+  padding: 5px;
+}
+.start-time-title {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  margin-bottom: 0px;
+  padding: 5px;
+}
+
+.end-time-title {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  margin-bottom: 0px;
+  padding: 5px;
+}
+
+.underline {
+  border-bottom: solid #c7eeff 2px;
+  width: 100%;
+  grid-row: 1 / 2;
+}
+
+.monday-checkbox-label {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+#monday-start-time {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  width: 100px;
+  margin: auto;
+}
+.monday-to-span {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+  margin: auto;
+}
+#monday-end-time {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  width: 100px;
+  margin: auto;
+}
+
+.tuesday-checkbox-label {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+#tuesday-start-time {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  width: 100px;
+  margin: auto;
+}
+.tuesday-to-span {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+  margin: auto;
+}
+#tuesday-end-time {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  width: 100px;
+  margin: auto;
+}
+
+.wednesday-checkbox-label {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+#wednesday-start-time {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  width: 100px;
+  margin: auto;
+}
+.wednesday-to-span {
+  grid-column: 2 / 4;
+  grid-row: 4 / 5;
+  margin: auto;
+}
+#wednesday-end-time {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+  width: 100px;
+  margin: auto;
+}
+
+.thursday-checkbox-label {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+
+#thursday-start-time {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+  width: 100px;
+  margin: auto;
+}
+.thursday-to-span {
+  grid-column: 2 / 4;
+  grid-row: 5 / 6;
+  margin: auto;
+}
+#thursday-end-time {
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+  width: 100px;
+  margin: auto;
+}
+
+.friday-checkbox-label {
+  grid-column: 1 / 2;
+  grid-row: 6 / 7;
+}
+
+#friday-start-time {
+  grid-column: 2 / 3;
+  grid-row: 6 / 7;
+  width: 100px;
+  margin: auto;
+}
+.friday-to-span {
+  grid-column: 2 / 4;
+  grid-row: 6 / 7;
+  margin: auto;
+}
+#friday-end-time {
+  grid-column: 3 / 4;
+  grid-row: 6 / 7;
+  width: 100px;
+  margin: auto;
+}
+
+/*This is for screen readers (I hope it works I do not have a screen reader to test ATM)*/
+.hidden-labels {
+  position: absolute;
+  top: -9999999px;
+  left: -999999px;
+}
+
+.recording-settings {
+  margin-top: 30px;
+}
+
+.camera-video-area {
+  margin-right: 30px;
+}
+.auto-publish-area {
+  margin-top: 30px;
+}
+
+.form-button-area {
+  margin-top: 30px;
+}
+
+.save-button {
+  color: white;
+  margin-right: 30px;
+  background-color: #0077c0;
+  border: none;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.cancel-button {
+  background-color: white;
+  border: solid 1px black;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+}
+.save-button:hover {
+  box-shadow: 2px 2px black;
+}
+
+.cancel-button:hover {
+  box-shadow: 2px 2px;
+}
